@@ -10,54 +10,38 @@ String root_html_template = " \
   <title>EasyBlynk8266</title> \
 </head> \
 <body> \
-  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\"> \
-  <link rel=\"stylesheet\" href=\"https://code.getmdl.io/1.3.0/material.indigo-pink.min.css\"> \
-  <script defer src=\"https://code.getmdl.io/1.3.0/material.min.js\"></script> \
   <div align=\"center\"> \
-    <table class=\"mdl-data-table mdl-js-data-tablemdl-shadow--2dp\"> \
+    <table> \
       <tbody> \
         <tr> \
-          <th class=\"mdl-data-table__cell--non-numeric\">Wifi</th> \
+          <th colspan=\"2\">Wifi</th> \
         </tr> \
         <tr> \
-          <td class=\"mdl-data-table__cell--non-numeric\"> \
-            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\"> \
-              <input class=\"mdl-textfield__input\" type=\"text\" id=\"wifi_ssid\" value=\"[[wifi_ssid]]\"> \
-              <label class=\"mdl-textfield__label\" for=\"wifi_ssid\">SSID</label> \
-            </div> \
-            <br /> \
-            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\"> \
-              <input class=\"mdl-textfield__input\" type=\"text\" id=\"wifi_passphrase\" value=\"[[wifi_passphrase]]\"> \
-              <label class=\"mdl-textfield__label\" for=\"wifi_passphrase\">Passphrase</label> \
-            </div> \
-          </td> \
+          <td>SSID</td> \
+          <td><input type=\"text\" value=\"[[wifi_ssid]]\" id=\"wifi_ssid\"></td> \
         </tr> \
         <tr> \
-          <th class=\"mdl-data-table__cell--non-numeric\">Blynk</th> \
+          <td>Passphrase</td> \
+          <td><input type=\"text\" value=\"[[wifi_passphrase]]\" id=\"wifi_passphrase\"></td> \
         </tr> \
         <tr> \
-          <td class=\"mdl-data-table__cell--non-numeric\"> \
-            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\"> \
-              <input class=\"mdl-textfield__input\" type=\"text\" id=\"blynk_server\" value=\"[[blynk_server]]\"> \
-              <label class=\"mdl-textfield__label\" for=\"blynk_server\">Server</label> \
-            </div> \
-            <br /> \
-            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\"> \
-              <input class=\"mdl-textfield__input\" type=\"text\" id=\"blynk_port\" pattern=\"-?[0-9]*(\.[0-9]+)?\" value=\"[[blynk_port]]\"> \
-              <label class=\"mdl-textfield__label\" for=\"blynk_port\">Port</label> \
-            </div> \
-            <br /> \
-            <div class=\"mdl-textfield mdl-js-textfield mdl-textfield--floating-label\"> \
-              <input class=\"mdl-textfield__input\" type=\"text\" id=\"blynk_token\" value=\"[[blynk_token]]\"> \
-              <label class=\"mdl-textfield__label\" for=\"blynk_token\">Token</label> \
-            </div> \
-          </td> \
+          <th colspan=\"2\">Blynk</th> \
         </tr> \
         <tr> \
-          <td> \
-            <button class=\"mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect\" onclick=\"save()\"> \
-              Save \
-            </button> \
+          <td>Server</td> \
+          <td><input type=\"text\" value=\"[[blynk_server]]\" id=\"blynk_server\"></td> \
+        </tr> \
+        <tr> \
+          <td>Port</td> \
+          <td><input type=\"text\" value=\"[[blynk_port]]\" id=\"blynk_port\"></td> \
+        </tr> \
+        <tr> \
+          <td>Token</td> \
+          <td><input type=\"text\" value=\"[[blynk_token]]\" id=\"blynk_token\"></td> \
+        </tr> \
+        <tr> \
+          <td colspan=\"2\" align=\"center\"> \
+            <button onclick=\"save()\">Save</button> \
           </td> \
         </tr> \
       </tbody> \
@@ -166,6 +150,7 @@ void EasyBlynk8266Class::startConfigurationMode() {
     server.on("/", []() {
         EasyBlynk8266.handleRequest();
     });
+
     server.begin();
 
     configuration_mode_led_timer.setInterval(1000L, []() {
