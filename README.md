@@ -1,9 +1,9 @@
 ## EasyBlynk8266
 If you are hardcoding your Wifi and Blynk credentials, and reflashing everytime when you need to change them, please stop it, seriously. I was like that before, but one day I woke up, and said enough is enough.
-I understand than if you do Arduino as a hobby, it's quite difficult to make time to write unnecessary features. But, with this library, you can do it without writing any extra code. Just replace, `Blynk` with `EasyBlynk8266` in your code, then it should just work fine, technically.
+I understand that if you do Arduino as a hobby, it's quite difficult to make time to write unnecessary features. But, with this library, you can do it without writing any extra code. Just replace, `Blynk` with `EasyBlynk8266` in your code, then it should just work fine, technically.
 
 ## So, how it works?
-If it cannot connect to the Blynk server in 30 seconds, it just switches to `Configuration Mode`. You will see your built-in LED (if you have one) flashes every second. In `Configuration Mode`, it starts an access point called `EasyBlynk8266-Config`, like below. Connect to it.
+If it cannot connect to the Blynk server in 30 seconds, it will switch to `Configuration Mode`. You will see your built-in LED (if you have one) flashes every second. In `Configuration Mode`, it starts an access point called `EasyBlynk8266-Config`, like below. Connect to it.
 
 <p align="center">
     <img src="https://user-images.githubusercontent.com/1836721/49258233-fcb50a80-f434-11e8-8e91-14a60202e487.png">
