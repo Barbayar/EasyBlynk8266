@@ -1,5 +1,5 @@
 ## EasyBlynk8266
-If you are hardcoding your Wifi and Blynk credentials, and reflashing everytime when you need to change them, please stop it, seriously. I was like that before, but one day I woke up, and said enough is enough.
+If you are hardcoding your Wifi and Blynk credentials, and reflashing every time when you need to change them, please stop it, seriously. I was like that before, but one day I woke up, and said enough is enough.
 I understand that if you do Arduino as a hobby, it's quite difficult to make time to write unnecessary features. But, with this library, you can do it without writing any extra code. Just replace, `Blynk` with `EasyBlynk8266` in your code, then it should just work fine, technically.
 
 ## So, how it works?
